@@ -324,7 +324,7 @@ img {
 			font-size:var(--font6);
 			/*スマホ*/
 			@media screen and (max-width: 480px) {
-				font-size:var(--font4);
+				font-size:var(--font5);
 			}
 		}
 	}
