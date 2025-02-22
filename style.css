@@ -301,30 +301,32 @@ img {
 	}
 	/*リンク*/
 	a{
-		font-size:var(--font8);
-		display: block; /* ブロック要素にする */
-		text-align: center; /* テキストを中央揃え */
-		margin: 15px auto; /* 上下に余白を入れて、左右を自動調整で中央配置 */
-		width: fit-content; /* リンクの幅をコンテンツに合わせる */
-		padding: 10px 20px;
-		color: var(--red);
-		font-weight: bold;
-		text-decoration: none;
-		background-image: linear-gradient(var(--red), var(--red));
-		background-repeat: no-repeat;
-		background-position: bottom right; /* 下線の初期位置 */
-		background-size: 0 1px; /* 下線のサイズ（横幅、高さ） */
-		transition: background-size 0.3s;
-		&:hover{
-			background-position: bottom left; /* 下線のホバー時位置 */
-			background-size: 100% 1px; /* 下線の横幅を100%にする */
-		}
-		/*タブレット*/
-		@media screen and (max-width: 959px) {
-			font-size:var(--font6);
-			/*スマホ*/
-			@media screen and (max-width: 480px) {
-				font-size:var(--font5);
+		&.modal-link{
+			font-size:var(--font8);
+			display: block; /* ブロック要素にする */
+			text-align: center; /* テキストを中央揃え */
+			margin: 15px auto; /* 上下に余白を入れて、左右を自動調整で中央配置 */
+			width: fit-content; /* リンクの幅をコンテンツに合わせる */
+			padding: 10px 20px;
+			color: var(--red);
+			font-weight: bold;
+			text-decoration: none;
+			background-image: linear-gradient(var(--red), var(--red));
+			background-repeat: no-repeat;
+			background-position: bottom right; /* 下線の初期位置 */
+			background-size: 0 1px; /* 下線のサイズ（横幅、高さ） */
+			transition: background-size 0.3s;
+			&:hover{
+				background-position: bottom left; /* 下線のホバー時位置 */
+				background-size: 100% 1px; /* 下線の横幅を100%にする */
+			}
+			/*タブレット*/
+			@media screen and (max-width: 959px) {
+				font-size:var(--font6);
+				/*スマホ*/
+				@media screen and (max-width: 480px) {
+					font-size:var(--font5);
+				}
 			}
 		}
 	}
