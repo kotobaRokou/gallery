@@ -130,6 +130,7 @@ let verticalTitle;
 let modal;
 let modalContent;
 let modalImage;
+let modalImageLink;
 let modalLink;
 let closeModalButton;
 
@@ -164,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	modal = document.getElementById("modal");
 	modalContent=modal.querySelector(".modal-content");
 	modalImage =document.querySelector(".modal-image");
+	modalImageLink = document.querySelector(".modal-image-link");
 	modalLink = document.querySelector(".modal-link");
 	closeModalButton = document.querySelector(".modal-close");
 
@@ -298,6 +300,7 @@ function openModal(image) {
 		modal.classList.add("show"); // フェードイン開始
 	}, 10);
 	modalImage.src = image.imgSrc;
+	modalImageLink.href=image.url;
 	modalLink.href = image.url;
 	modalLink.innerHTML = image.title+"<br><br>記事を見る";
 	// 既存のイベントリスナーを削除してから追加（重複を防ぐ）
