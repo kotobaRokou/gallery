@@ -302,7 +302,7 @@ function openModal(image) {
 	modalImage.src = image.imgSrc;
 	modalImageLink.href=image.url;
 	modalLink.href = image.url;
-	modalLink.innerHTML = image.title+"<br><br>記事を見る";
+	modalLink.innerHTML = image.title;//+"<br><br>記事を見る";
 	// 既存のイベントリスナーを削除してから追加（重複を防ぐ）
 	modal.removeEventListener("touchstart", handleTouchStart);
 	modal.removeEventListener("touchend", handleTouchEnd);
