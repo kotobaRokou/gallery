@@ -353,7 +353,7 @@ function fadeOutInSwitchModal(direction) {
 		}
 		modalImage.src = allGalleryImages[currentModalIndex].imgSrc;
 		modalLink.href = allGalleryImages[currentModalIndex].url;
-		modalLink.innerHTML = allGalleryImages[currentModalIndex].title + "<br><br>記事を見る";
+		modalLink.innerHTML = allGalleryImages[currentModalIndex].title;// + "<br><br>記事を見る";
 		// フェードイン
 		modalContent.classList.remove("fade-out");
 		modalContent.classList.add("fade-in");
