@@ -30,6 +30,7 @@ html,body{
 	background-color: var(--white);
 	overflow: auto; /* スクロールは可能 */
 	scrollbar-width: none; /* Firefoxでスクロールバーを非表示 */
+	width:100vw;
 }
 body::-webkit-scrollbar {
 	display: none; /* Chrome, Safari, Edge用 */
