@@ -41,7 +41,7 @@ img {
 	user-drag: none; /* その他のブラウザ */
 }
 #footer{
-	width:200px;
+	width:400px;
 	font-size:var(--font8);
 	color:var(--red);
 	position:relative;
@@ -154,6 +154,7 @@ img {
 
 #gallery{
 	height:100%;
+	width:100%;
 }
 .gallery-title{
 	color:var(--red);
