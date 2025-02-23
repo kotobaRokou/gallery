@@ -39,6 +39,20 @@ img {
 	-webkit-user-drag: none; /* Safari用 */
 	user-drag: none; /* その他のブラウザ */
 }
+#footer{
+	font-size:var(--font8);
+	color:var(--red);
+	position:relative;
+	left:10%;
+	/*タブレット*/
+	@media screen and (max-width: 959px) {
+		font-size: var(--font7);
+		/*スマホ*/
+		@media screen and (max-width: 480px) {
+		font-size: var(--font6);
+		}
+	}
+}
 
 #phrase {
 	position: fixed;
@@ -137,7 +151,7 @@ img {
 
 
 #gallery{
-	height:100vh;
+	height:100%;
 }
 .gallery-title{
 	color:var(--red);
@@ -191,7 +205,7 @@ img {
 		grid-template-columns: repeat(5, 1fr);
 		/*スマホ*/
 		@media screen and (max-width: 480px) {
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 }
@@ -277,6 +291,15 @@ img {
 	max-width: 60vw;
 	/*opacity: 0; /* 初期状態で透明 */
 	border:1px solid var(--red);
+	/*タブレット*/
+	@media screen and (max-width: 959px) {
+		border:1px solid var(--red);
+		/*スマホ*/
+		@media screen and (max-width: 480px) {
+			max-width:90%;
+			border:0px solid var(--red);
+		}
+	}
 	/*画像*/
 	img{
 		width: 100%;
@@ -325,7 +348,7 @@ img {
 				font-size:var(--font6);
 				/*スマホ*/
 				@media screen and (max-width: 480px) {
-					font-size:var(--font5);
+					font-size:var(--font6);
 				}
 			}
 		}
