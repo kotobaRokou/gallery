@@ -133,6 +133,7 @@ let modalImage;
 let modalImageLink;
 let modalLink;
 let closeModalButton;
+let footerElement;
 
 function setElementDefaultHide(element,innerHtmlText){
 	// 最初は非表示＆透明
@@ -162,6 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	//縦タイトル
 	verticalTitle = document.getElementById("vertical-title");
 
+	footerElement = document.getElementById("footer");
+	setElementDefaultHide(footerElement,"© words are exposed to the light");
+
 	modal = document.getElementById("modal");
 	modalContent=modal.querySelector(".modal-content");
 	modalImage =document.querySelector(".modal-image");
@@ -187,12 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	gallery.appendChild(titleDiv)
 	//縦タイトルをgalleryの半分までスクロールしたら隠れる
 	window.addEventListener("scroll", function () {
-		// gallery要素の位置を取得
-		let galleryTop = gallery.getBoundingClientRect().top;
-		// galleryがビューポートに入ったらタイトルを隠す
-		let galleryHeight = gallery.offsetHeight;
-		// galleryの半分がビューポートに入った時にタイトルを隠す
-		if (galleryTop + galleryHeight / 2 <= window.innerHeight) {
+		let slideRect = slideElement.getBoundingClientRect();
+		// slide が完全に画面外（上に消える）に行ったら
+		if (slideRect.bottom <= 0) {
 			verticalTitle.classList.add("hidden");
 		} else {
 			verticalTitle.classList.remove("hidden");
@@ -237,6 +238,7 @@ async function showContents(phrases) {
 			showSlide(0);
 			//ギャラリーを表示
 			await showElement(galleryElement);
+			await showElement(footerElement);
 			return;
 		}
 		await new Promise(resolve => setTimeout(resolve, 100));
