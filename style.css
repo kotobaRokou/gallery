@@ -40,6 +40,8 @@ body::-webkit-scrollbar {
 img {
 	-webkit-user-drag: none; /* Safari用 */
 	user-drag: none; /* その他のブラウザ */
+    	pointer-events: none; /* iOSの画像保存防止 */
+    	-webkit-touch-callout: none; /* 長押しメニュー無効化 */
 }
 #footer{
 	width:400px;
