@@ -199,6 +199,21 @@ document.addEventListener("DOMContentLoaded", () => {
 			verticalTitle.classList.remove("hidden");
 		}
 	});
+	//スライドショー要素のスワイプ
+	slideElement.addEventListener('touchstart', (e) => {
+		slidestartX = e.touches[0].clientX;
+	});
+	slideElement.addEventListener('touchend', (e) => {
+		const slideEndX = e.changedTouches[0].clientX;
+		const diffX = slidestartX - slideEndX;
+		if (Math.abs(diffX) > 50) { // スワイプ距離が50px以上の場合
+			if (diffX > 0) {
+			nextSlide();
+			} else {
+			prevSlide();
+			}
+		}
+	});
 });
 
 //フレーズ作成
@@ -276,11 +291,37 @@ function showSlide(index) {
 	});
 	slides[currentSlideIndex].classList.add("active"); // 現在のスライドにactiveクラスを追加
 }
-// 10秒ごとに次のスライドに切り替え
-setInterval(() => {
+
+let slideInterval;
+// スライドショーを開始
+function startSlideShow() {
+	clearInterval(slideInterval);
+	slideInterval = setInterval(() => {
+		nextSlide();
+	}, 10000); // 10秒
+}
+//スライドショー開始
+startSlideShow();
+
+
+//次のスライドへ切り替え
+function nextSlide() {
 	currentSlideIndex++;
 	showSlide(currentSlideIndex);
-}, 30000);  // 10000ミリ秒 = 10秒
+	startSlideShow(); // スライドしたらリセット
+}
+//前のスライドに切り替え
+function prevSlide() {
+	currentSlideIndex--;
+	showSlide(currentSlideIndex);
+	startSlideShow(); // スライドしたらリセット
+}
+
+  // スワイプ検出用
+let slideStartX = 0;
+
+
+
 
 // タップ時の誤動作を防ぐためのスワイプ時の処理を実行しない最小距離
 const minimumDistance = 100
