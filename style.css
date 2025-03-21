@@ -297,6 +297,7 @@ img {
 	background-color: var(--white);
 	width: 80%;
 	max-width: 60vw;
+	max-height:90vh;
 	/*opacity: 0; /* 初期状態で透明 */
 	border:1px solid var(--red);
 	/*タブレット*/
@@ -310,7 +311,12 @@ img {
 	}
 	/*画像*/
 	img{
-		width: 100%;
+		display: block; /* ブロック要素として扱う */
+		margin-left: auto; /* 左右の自動マージンで中央に配置 */
+		margin-right: auto;
+		max-width: 60vw;
+		max-height: 80vh;
+		object-fit: contain; /* 比率を維持して収める */
 	}
 	/*「×」ボタン*/
 	span{
